@@ -2,14 +2,21 @@ import React from 'react'
 import {
   View,
   Text,
-  Image
+  Image,
+  StatusBar
 } from 'react-native'
 import IllustrationImage from '../../assets/illustration.png'
 import { styles } from './styles'
+import { ButtonIcon } from '../../components/ButtonIcon'
 
 export function SignIn () {
   return (
     <View style={styles.container}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <Image
         source={IllustrationImage}
         style={styles.image}
@@ -27,6 +34,8 @@ export function SignIn () {
           Crie grupos para jogar seus games {`\n`}
           Favoritos com seus amigos
         </Text>
+
+        <ButtonIcon />
       </View>
     </View>
   )
