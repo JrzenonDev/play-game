@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+  StatusBar
+} from 'react-native'
 import { SignIn } from './src/Screen/SignIn'
 import { useFonts } from 'expo-font'
 import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter'
@@ -14,10 +17,17 @@ export default function App () {
   })
 
   if (!fontLoaded) {
-
+    return <AppLoading />
   }
 
   return (
-    <SignIn />
+    <>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <SignIn />
+    </>
   )
 }
